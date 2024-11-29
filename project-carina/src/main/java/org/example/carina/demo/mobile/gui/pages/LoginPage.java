@@ -3,7 +3,6 @@ package org.example.carina.demo.mobile.gui.pages;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends AbstractPage {
@@ -20,12 +19,10 @@ public class LoginPage extends AbstractPage {
     @FindBy(id = "SubmitLogin")
     private ExtendedWebElement submitLoginButton;
 
-    // Método para ingresar credenciales
     public AccountPage login(String email, String password) {
         emailInput.type(email);
         passwordInput.type(password);
         submitLoginButton.click();
         return new AccountPage(getDriver());
-
     }
 }
